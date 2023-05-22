@@ -7,7 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Funcionário {
+public class Funcionario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,13 +19,17 @@ public class Funcionário {
 	@Embedded
 	private Endereco endereco;
 	
-	public Funcionário(Long id, String nome, String email, String telefone, Endereco endereco) {
+	public Funcionario(Long id, String nome, String email, String telefone, Endereco endereco) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.telefone = telefone;
 		this.endereco = endereco;
+	}
+
+	public Funcionario() {
+
 	}
 
 	public Long getId() {
