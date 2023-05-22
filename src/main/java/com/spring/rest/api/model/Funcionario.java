@@ -1,5 +1,6 @@
 package com.spring.rest.api.model;
 
+import com.spring.rest.api.dto.DadosFuncionarioCadastro;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -71,7 +72,5 @@ public class Funcionario {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
-	
-	
-	
+
 }
