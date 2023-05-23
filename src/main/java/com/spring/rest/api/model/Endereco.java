@@ -3,13 +3,16 @@ package com.spring.rest.api.model;
 import com.spring.rest.api.dto.DadosEnderecoCadastro;
 import com.spring.rest.api.dto.DadosFuncionarioCadastro;
 import jakarta.persistence.Embeddable;
+import jakarta.validation.constraints.NotBlank;
 
 @Embeddable
 public class Endereco {
-	
+	@NotBlank
 	private String cep;
 	private String numero;
+	@NotBlank
 	private String bairro;
+	@NotBlank
 	private String cidade;
 	
 	public Endereco(String cep, String numero, String bairro, String cidade) {

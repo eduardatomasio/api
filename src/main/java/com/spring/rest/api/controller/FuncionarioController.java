@@ -40,7 +40,6 @@ public class FuncionarioController {
     @Transactional
     public void deletar(@PathVariable Long id) {
         repository.deleteById(id);
-        System.out.println("deletado");
     }
 
 
