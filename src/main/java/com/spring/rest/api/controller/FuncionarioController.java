@@ -35,6 +35,13 @@ public class FuncionarioController {
         var funcionaio = repository.getReferenceById(dados.id());
         funcionaio.atualizarDados(dados);
     }
+    @DeleteMapping
+    @RequestMapping("/{id}")
+    @Transactional
+    public void deletar(@PathVariable Long id) {
+        repository.deleteById(id);
+        System.out.println("deletado");
+    }
 
 
 
