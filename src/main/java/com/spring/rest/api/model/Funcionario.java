@@ -1,5 +1,6 @@
 package com.spring.rest.api.model;
 
+import com.spring.rest.api.dto.DadosEditados;
 import com.spring.rest.api.dto.DadosFuncionarioCadastro;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
@@ -40,6 +41,14 @@ public class Funcionario {
 		this.endereco = new Endereco(dados.endereco());
 	}
 
+	public Funcionario(DadosEditados dados) {
+		this.id = dados.id();
+		this.nome = dados.nome();
+		this.email = dados.email();
+		this.telefone = dados.telefone();
+		this.endereco = new Endereco(dados.endereco());
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -71,4 +80,18 @@ public class Funcionario {
 		this.endereco = endereco;
 	}
 
+	public void atualizarDados(DadosEditados dados) {
+		if(dados.nome() != null) {
+			this.nome = dados.nome();
+		}
+		if(dados.email() != null) {
+			this.email = dados.email();
+		}
+		if(dados.telefone() != null) {
+			this.telefone = dados.telefone();
+		}
+		if(dados.endereco() != null) {
+			this.endereco.atualizarDados(dados.endereco());
+		}
+	}
 }

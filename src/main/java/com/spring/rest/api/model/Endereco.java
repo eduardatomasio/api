@@ -29,6 +29,14 @@ public class Endereco {
 		this.bairro = dados.bairro();
 		this.cidade = dados.cidade();
 	}
+
+	public Endereco(Endereco dados) {
+		this.cep = dados.cep;
+		this.numero = dados.numero;
+		this.bairro = dados.bairro;
+		this.cidade = dados.cidade;
+	}
+
 	public String getCep() {
 		return cep;
 	}
@@ -54,4 +62,18 @@ public class Endereco {
 		this.cidade = cidade;
 	}
 
+	public void atualizarDados(Endereco dados) {
+		if(dados.cep != null) {
+			this.cep = dados.cep;
+		}
+		if(dados.numero != null) {
+			this.numero = dados.numero;
+		}
+		if(dados.bairro != null) {
+			this.bairro = dados.bairro;
+		}
+		if(dados.cidade != null) {
+			this.cidade = dados.cidade;
+		}
+	}
 }
