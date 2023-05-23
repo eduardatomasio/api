@@ -23,14 +23,14 @@ public class Endereco {
 	public Endereco() {
 
 	}
-	public Endereco(DadosEnderecoCadastro dados) {
+	public Endereco(DadosEnderecoCadastro dados) { //Construtor para cadastro
 		this.cep = dados.cep();
 		this.numero = dados.numero();
 		this.bairro = dados.bairro();
 		this.cidade = dados.cidade();
 	}
 
-	public Endereco(Endereco dados) {
+	public Endereco(Endereco dados) { //Construtor para alteração cadastro
 		this.cep = dados.cep;
 		this.numero = dados.numero;
 		this.bairro = dados.bairro;

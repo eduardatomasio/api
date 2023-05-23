@@ -34,14 +34,14 @@ public class Funcionario {
 
 	}
 
-	public Funcionario(DadosFuncionarioCadastro dados) {
+	public Funcionario(DadosFuncionarioCadastro dados) { //Construtor para cadastro
 		this.nome = dados.nome();
 		this.email = dados.email();
 		this.telefone = dados.telefone();
 		this.endereco = new Endereco(dados.endereco());
 	}
 
-	public Funcionario(DadosEditados dados) {
+	public Funcionario(DadosEditados dados) { //Construtor para alteração cadastro
 		this.id = dados.id();
 		this.nome = dados.nome();
 		this.email = dados.email();
