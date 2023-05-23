@@ -23,15 +23,12 @@ public class Endereco {
 	public Endereco() {
 
 	}
-
 	public Endereco(DadosEnderecoCadastro dados) {
 		this.cep = dados.cep();
 		this.numero = dados.numero();
 		this.bairro = dados.bairro();
 		this.cidade = dados.cidade();
 	}
-
-
 	public String getCep() {
 		return cep;
 	}

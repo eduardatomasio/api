@@ -1,13 +1,13 @@
 package com.spring.rest.api.controller;
 
 import com.spring.rest.api.dto.DadosFuncionarioCadastro;
+import com.spring.rest.api.dto.DadosListagem;
 import com.spring.rest.api.model.Funcionario;
 import com.spring.rest.api.repository.FuncionarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/funcionarios")
@@ -21,5 +21,11 @@ public class FuncionarioController {
         Funcionario funcionario = new Funcionario(dados);
         repository.save(funcionario);
     }
+    @GetMapping
+    public List<DadosListagem> listar() {
+        return repository.findAll().stream().map(DadosListagem :: new).toList();
+    }
+
+
 
 }
