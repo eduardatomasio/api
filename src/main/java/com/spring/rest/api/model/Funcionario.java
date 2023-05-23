@@ -33,6 +33,13 @@ public class Funcionario {
 
 	}
 
+	public Funcionario(DadosFuncionarioCadastro dados) {
+		this.nome = dados.nome();
+		this.email = dados.email();
+		this.telefone = dados.telefone();
+		this.endereco = new Endereco(dados.endereco());
+	}
+
 	public Long getId() {
 
 		return id;
@@ -83,10 +90,4 @@ public class Funcionario {
 		this.endereco = endereco;
 	}
 
-	public void setarDadosFuncionario(DadosFuncionarioCadastro dados) {
-		this.nome = dados.nome();
-		this.email = dados.email();
-		this.telefone = dados.telefone();
-		this.endereco = new Endereco(dados.endereco());
-	}
 }
