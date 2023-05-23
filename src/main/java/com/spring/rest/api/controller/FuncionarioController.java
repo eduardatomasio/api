@@ -19,6 +19,7 @@ public class FuncionarioController {
     private FuncionarioRepository repository;
 
     @PostMapping
+    @Transactional
     public void cadastrar(@RequestBody DadosFuncionarioCadastro dados) {
         Funcionario funcionario = new Funcionario(dados);
         repository.save(funcionario);
@@ -29,6 +30,7 @@ public class FuncionarioController {
     }
 
     @PutMapping
+    @Transactional
     public void alterar(@RequestBody DadosEditados dados) {
         var funcionaio = repository.getReferenceById(dados.id());
         funcionaio.atualizarDados(dados);
